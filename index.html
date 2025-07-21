@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summit Site Design | Professional Web Design Services</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        canvas {
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+        .content {
+            position: absolute;
+            width: 100%;
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        section {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            box-sizing: border-box;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        nav {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 100;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        nav a:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .project {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+        .project img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-bottom: 10px;
+        }
+        .pricing-plans {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .pricing-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 30px;
+            width: 300px;
+            text-align: center;
+        }
+        .price {
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 15px 0;
+            color: #4CAF50;
+        }
+        ul.features {
+            text-align: left;
+            padding-left: 20px;
+        }
+        ul.features li {
+            margin-bottom: 8px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            margin-top: 20px;
+            background: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .btn:hover {
+            background: #45a049;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            h2 {
+                font-size: 1.5rem;
+            }
+            nav {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+            nav a {
+                margin: 5px 0;
+            }
+            .pricing-plans {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <canvas id="bg"></canvas>
+    
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <main class="content">
+        <section id="home">
+            <div class="card">
+                <h1>Welcome to Summit Site Design</h1>
+                <p>Professional website design services tailored to your business needs</p>
+            </div>
+        </section>
+
+        <section id="about">
+            <div class="card">
+                <h2>About Us</h2>
+                <p>At Summit Site Design, we specialize in creating stunning websites that help businesses establish their online presence. Our team combines creativity and technical expertise to deliver websites that not only look great but also provide a seamless user experience.</p>
+            </div>
+        </section>
+
+        <section id="services">
+            <div class="card">
+                <h2>Our Services & Pricing</h2>
+                <p>We offer three comprehensive packages to meet your website needs:</p>
+                
+                <div class="pricing-plans">
+                    <div class="pricing-card">
+                        <h3>Starter Package</h3>
+                        <div class="price">$500</div>
+                        <p>Perfect for small businesses or personal websites</p>
+                        <ul class="features">
+                            <li>5-page responsive website</li>
+                            <li>Basic SEO setup</li>
+                            <li>Contact form</li>
+                            <li>Social media integration</li>
+                            <li>1 revision round</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Started</a>
+                        <p><strong>Example:</strong> A local bakery website with menu, about us, contact page, and gallery.</p>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Professional Package</h3>
+                        <div class="price">$1000</div>
+                        <p>Ideal for growing businesses</p>
+                        <ul class="features">
+                            <li>10-page responsive website</li>
+                            <li>Advanced SEO setup</li>
+                            <li>Contact form with validation</li>
+                            <li>Blog integration</li>
+                            <li>2 revision rounds</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Started</a>
+                        <p><strong>Example:</strong> A corporate website with services, team, testimonials, and blog.</p>
+                    </div>
+                    
+                    <div class="pricing-card">
+                        <h3>Premium Package</h3>
+                        <div class="price">$1500</div>
+                        <p>Comprehensive solution for established businesses</p>
+                        <ul class="features">
+                            <li>Unlimited pages</li>
+                            <li>Full SEO optimization</li>
+                            <li>Custom contact forms</li>
+                            <li>E-commerce functionality</li>
+                            <li>3 revision rounds</li>
+                        </ul>
+                        <a href="#contact" class="btn">Get Started</a>
+                        <p><strong>Example:</strong> An e-commerce site with product listings, shopping cart, and payment integration.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="card">
+                <h2>Our Projects</h2>
+                <p>Explore some of the websites we've created for our clients:</p>
+                
+                <div class="project">
+                    <h3>Modern E-Commerce Store</h3>
+                    <img src="https://images.unsplash.com/photo-1581291518857-4c7e1c1c1c1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="E-Commerce Project">
+                    <p>A fully responsive e-commerce website featuring a modern design, user-friendly navigation, and secure payment processing.</p>
+                    <p><strong>Technologies:</strong> HTML, CSS, JavaScript, Shopify</p>
+                </div>
+                
+                <div class="project">
+                    <h3>Corporate Business Website</h3>
+                    <img src="https://images.unsplash.com/photo-1504386101620-5d5c1c1c1c1c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Corporate Website Project">
+                    <p>A professional website for a corporate client, showcasing their services, team, and client testimonials with a clean and elegant design.</p>
+                    <p><strong>Technologies:</strong> WordPress, PHP, MySQL</p>
+                </div>
+                
+                <div class="project">
+                    <h3>Creative Portfolio</h3>
+                    <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Portfolio Project">
+                    <p>An interactive portfolio website for a creative professional, featuring a gallery of work, blog, and contact form.</p>
+                    <p><strong>Technologies:</strong> React, Node.js, Express</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="reviews">
+            <div class="card">
+                <h2>Client Reviews</h2>
+                <div class="review">
+                    <p>"Summit Site Design transformed our online presence with their stunning website. Our sales have increased significantly!"</p>
+                    <p><strong>- Emily Johnson, E-Commerce Business Owner</strong></p>
+                </div>
+                <div class="review">
+                    <p>"The team at Summit Site Design was professional and attentive to our needs. We couldn't be happier with the results!"</p>
+                    <p><strong>- Mark Smith, Corporate Client</strong></p>
+                </div>
+                <div class="review">
+                    <p>"Their creativity and technical skills are top-notch. Our portfolio website has received rave reviews!"</p>
+                    <p><strong>- Sarah Lee, Creative Director</strong></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <div class="card">
+                <h2>Contact Us</h2>
+                <form id="contact-form" action="https://formspree.io/f/xyzpyjez" method="POST">
+                    <input type="text" name="name" placeholder="Your Name" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;">
+                    <input type="email" name="email" placeholder="Your Email" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none;">
+                    <textarea name="message" placeholder="Your Message" required style="width: 100%; padding: 10px; margin: 10px 0; border-radius: 5px; border: none; min-height: 100px;"></textarea>
+                    <button type="submit" style="padding: 10px 20px; border-radius: 5px; border: none; background: #4CAF50; color: white; cursor: pointer;">Send Message</button>
+                </form>
+                <p style="margin-top: 20px;">Or email us directly at: <a href="mailto:summitsitedesignco@gmail.com" style="color: #4CAF50;">summitsitedesignco@gmail.com</a></p>
+            </div>
+        </section>
+    </main>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script>
+        // Scene setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        const renderer = new THREE.WebGLRenderer({
+            canvas: document.querySelector('#bg'),
+            antialias: true
+        });
+        
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        camera.position.setZ(30);
+        
+        // Add ambient light
+        const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+        scene.add(ambientLight);
+        
+        // Add directional light
+        const directionalLight = new THREE.DirectionalLight(0xffffff, 0.8);
+        directionalLight.position.set(5, 5, 5);
+        scene.add(directionalLight);
+        
+        // Create floating objects
+        const geometry = new THREE.TorusGeometry(10, 3, 16, 100);
+        const material = new THREE.MeshStandardMaterial({ 
+            color: 0x3b82f6,
+            wireframe: true
+        });
+        const torus = new THREE.Mesh(geometry, material);
+        scene.add(torus);
+        
+        // Add stars
+        function addStar() {
+            const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+            const material = new THREE.MeshStandardMaterial({ color: 0xffffff });
+            const star = new THREE.Mesh(geometry, material);
+            
+            const [x, y, z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
+            star.position.set(x, y, z);
+            scene.add(star);
+        }
+        
+        Array(200).fill().forEach(addStar);
+        
+        // Background
+        const spaceTexture = new THREE.TextureLoader().load('https://images.unsplash.com/photo-1534796636912-3b95b3ab5986?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+        scene.background = spaceTexture;
+        
+        // Scroll animation
+        function moveCamera() {
+            const t = document.body.getBoundingClientRect().top;
+            
+            camera.position.z = t * -0.01 + 30;
+            camera.position.x = t * -0.0002;
+            camera.position.y = t * -0.0002;
+        }
+        
+        document.body.onscroll = moveCamera;
+        
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+            
+            torus.rotation.x += 0.01;
+            torus.rotation.y += 0.005;
+            torus.rotation.z += 0.01;
+            
+            renderer.render(scene, camera);
+        }
+        
+        animate();
+        
+        // Handle window resize
+        window.addEventListener('resize', () => {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+        
+        // Smooth scrolling for navigation
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
+```
